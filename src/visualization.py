@@ -7,21 +7,21 @@ from plotly.subplots import make_subplots
 import logging
 import os
 
-# ─── 1. Setup Logging ───────────────────────────────────────
+
 logging.basicConfig(
     filename='logs/pipeline.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-# ─── 2. Load Cleaned Data ────────────────────────────────────
+
 def load_cleaned_data(filepath='data/processed/cleaned_data.csv'):
     logging.info("Loading cleaned data for visualization")
     df = pd.read_csv(filepath)
-    print(f"✅ Data Loaded: {df.shape[0]} rows, {df.shape[1]} columns")
+    print(f" Data Loaded: {df.shape[0]} rows, {df.shape[1]} columns")
     return df
 
-# ─── 3. Readmission Rate by Age ──────────────────────────────
+
 def plot_readmission_by_age(df):
     logging.info("Plotting readmission rate by age group")
 
@@ -43,10 +43,9 @@ def plot_readmission_by_age(df):
     plt.tight_layout()
     plt.savefig('reports/readmission_by_age.png')
     plt.close()
-    print("✅ Readmission by Age plot saved!")
+    print(" Readmission by Age plot saved!")
     logging.info("Readmission by age plot saved")
 
-# ─── 4. Correlation Heatmap ──────────────────────────────────
 def plot_correlation_heatmap(df):
     logging.info("Plotting correlation heatmap")
 
@@ -64,10 +63,10 @@ def plot_correlation_heatmap(df):
     plt.tight_layout()
     plt.savefig('reports/correlation_heatmap.png')
     plt.close()
-    print("✅ Correlation Heatmap saved!")
+    print(" Correlation Heatmap saved!")
     logging.info("Correlation heatmap saved")
 
-# ─── 5. Medication Distribution ──────────────────────────────
+
 def plot_medication_distribution(df):
     logging.info("Plotting medication distribution")
 
@@ -85,10 +84,10 @@ def plot_medication_distribution(df):
     plt.tight_layout()
     plt.savefig('reports/medication_distribution.png')
     plt.close()
-    print("✅ Medication Distribution plot saved!")
+    print(" Medication Distribution plot saved!")
     logging.info("Medication distribution plot saved")
 
-# ─── 6. Time in Hospital Boxplot ─────────────────────────────
+
 def plot_time_in_hospital(df):
     logging.info("Plotting time in hospital boxplot")
 
@@ -108,14 +107,14 @@ def plot_time_in_hospital(df):
     plt.tight_layout()
     plt.savefig('reports/time_in_hospital.png')
     plt.close()
-    print("✅ Time in Hospital plot saved!")
+    print(" Time in Hospital plot saved!")
     logging.info("Time in hospital plot saved")
 
-# ─── 7. Interactive Plotly Dashboard ─────────────────────────
+
 def plot_interactive_dashboard(df):
     logging.info("Creating interactive Plotly dashboard")
 
-    # Readmission by age — interactive
+    
     age_readmission = df.groupby('age')['readmitted'].mean() * 100
     age_readmission = age_readmission.reset_index()
 
@@ -129,7 +128,6 @@ def plot_interactive_dashboard(df):
         )
     )
 
-    # Plot 1 — Readmission by Age
     fig.add_trace(
         go.Bar(
             x=age_readmission['age'],
@@ -140,7 +138,6 @@ def plot_interactive_dashboard(df):
         row=1, col=1
     )
 
-    # Plot 2 — Time in Hospital
     fig.add_trace(
         go.Histogram(
             x=df['time_in_hospital'],
@@ -150,7 +147,7 @@ def plot_interactive_dashboard(df):
         row=1, col=2
     )
 
-    # Plot 3 — Gender Distribution
+
     gender_counts = df['gender'].value_counts()
     fig.add_trace(
         go.Bar(
@@ -162,7 +159,7 @@ def plot_interactive_dashboard(df):
         row=2, col=1
     )
 
-    # Plot 4 — Inpatient Visits vs Readmission
+   
     fig.add_trace(
         go.Box(
             x=df['readmitted'].astype(str),
@@ -183,7 +180,7 @@ def plot_interactive_dashboard(df):
     print(" Interactive Dashboard saved to reports/dashboard.html!")
     logging.info("Interactive dashboard saved")
 
-# ─── Main ────────────────────────────────────────────────────
+
 if __name__ == "__main__":
     df = load_cleaned_data()
     plot_readmission_by_age(df)
@@ -191,5 +188,5 @@ if __name__ == "__main__":
     plot_medication_distribution(df)
     plot_time_in_hospital(df)
     plot_interactive_dashboard(df)
-    print("\n🎉 All Visualizations Complete!")
+    print("\n  All Visualizations Complete!")
     print("   Check your reports/ folder!")

@@ -16,14 +16,13 @@ import logging
 import os
 from datetime import datetime
 
-# ─── Setup Logging ───────────────────────────────────────────
+
 logging.basicConfig(
     filename='logs/pipeline.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-# ─── Step 1: Load All Results ────────────────────────────────
 def load_results():
     print("Step 1: Loading all results...")
     df = pd.read_csv('data/processed/cleaned_data.csv')
@@ -33,7 +32,7 @@ def load_results():
     logging.info("Results loaded for report generation")
     return df, summary, correlations
 
-# ─── Step 2: Generate Excel Report ──────────────────────────
+
 def generate_excel_report(df, summary, correlations):
     print("\nStep 2: Generating Excel report...")
     excel_path = 'reports/patient_analysis_report.xlsx'
@@ -120,10 +119,10 @@ def generate_excel_report(df, summary, correlations):
             index=False
         )
 
-    print(f"   ✅ Excel report saved to {excel_path}")
+    print(f"    Excel report saved to {excel_path}")
     logging.info("Excel report generated successfully")
 
-# ─── Step 3: Generate PDF Report ────────────────────────────
+
 def generate_pdf_report(df):
     print("\nStep 3: Generating PDF report...")
 
@@ -132,7 +131,7 @@ def generate_pdf_report(df):
     styles = getSampleStyleSheet()
     content = []
 
-    # ── Title ──────────────────────────────────────────────
+    
     content.append(Paragraph(
         "Patient Readmission Risk Analysis Report",
         styles['Title']
@@ -144,7 +143,6 @@ def generate_pdf_report(df):
     ))
     content.append(Spacer(1, 20))
 
-    # ── Section 1: Project Overview ────────────────────────
     content.append(Paragraph("1. Project Overview", styles['Heading1']))
     content.append(Spacer(1, 10))
     content.append(Paragraph(
@@ -156,7 +154,7 @@ def generate_pdf_report(df):
     ))
     content.append(Spacer(1, 20))
 
-    # ── Section 2: Dataset Summary ─────────────────────────
+   
     content.append(Paragraph("2. Dataset Summary", styles['Heading1']))
     content.append(Spacer(1, 10))
 
@@ -188,7 +186,8 @@ def generate_pdf_report(df):
     content.append(table)
     content.append(Spacer(1, 20))
 
-    # ── Section 3: Key Findings ────────────────────────────
+  
+  
     content.append(Paragraph("3. Key Findings", styles['Heading1']))
     content.append(Spacer(1, 10))
 
@@ -208,7 +207,6 @@ def generate_pdf_report(df):
 
     content.append(Spacer(1, 20))
 
-    # ── Section 4: Statistical Analysis ───────────────────
     content.append(Paragraph("4. Statistical Analysis", styles['Heading1']))
     content.append(Spacer(1, 10))
 
@@ -237,7 +235,6 @@ def generate_pdf_report(df):
     content.append(stats_table)
     content.append(Spacer(1, 20))
 
-    # ── Section 5: Model Performance ──────────────────────
     content.append(Paragraph("5. Model Performance", styles['Heading1']))
     content.append(Spacer(1, 10))
 
@@ -265,7 +262,6 @@ def generate_pdf_report(df):
     content.append(model_table)
     content.append(Spacer(1, 20))
 
-    # ── Section 6: All Charts ──────────────────────────────
     content.append(PageBreak())
     content.append(Paragraph("6. Visualizations", styles['Heading1']))
     content.append(Spacer(1, 10))
@@ -307,16 +303,16 @@ def generate_pdf_report(df):
             content.append(img)
             content.append(Spacer(1, 20))
 
-    # ── Build PDF ──────────────────────────────────────────
+
     doc.build(content)
     print(f"   ✅ PDF report saved to {pdf_path}")
     logging.info("PDF report generated successfully")
 
-# ─── Main ────────────────────────────────────────────────────
+
 if __name__ == "__main__":
     df, summary, correlations = load_results()
     generate_excel_report(df, summary, correlations)
     generate_pdf_report(df)
-    print("\n🎉 Reports Generated Successfully!")
+    print("\n Reports Generated Successfully!")
     print("   Check your reports/ folder!")
 

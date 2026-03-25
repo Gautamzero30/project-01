@@ -378,3 +378,58 @@
 2026-03-25 20:18:46,083 - INFO - Diabetes checker loaded
 2026-03-25 20:19:13,817 - INFO - Patient details collected
 2026-03-25 20:19:13,990 - INFO - Health report generated. Risk: 🔴 HIGH RISK, Score: 72.1%
+2026-03-25 22:16:26,689 - INFO - loading data from: data/raw/diabetic_data.csv
+2026-03-25 22:16:26,875 - INFO - Data loaded successfully
+2026-03-25 22:17:02,771 - INFO - showing the basic dataset info
+2026-03-25 22:17:02,846 - INFO - Saving data to SQLite database
+2026-03-25 22:17:03,275 - INFO - Data saved to database successfully
+2026-03-25 22:17:03,275 - INFO - loading raw data for cleaning
+2026-03-25 22:17:03,458 - INFO - Replacing ? with NaN
+2026-03-25 22:17:03,601 - INFO - Dropping useless columns
+2026-03-25 22:17:03,603 - INFO - Columns after dropping: 43
+2026-03-25 22:17:03,603 - INFO - handling missing values
+2026-03-25 22:17:03,783 - INFO - missing values handled successfully
+2026-03-25 22:17:03,783 - INFO - Cleaning target column: readmitted
+2026-03-25 22:17:03,797 - INFO - Target column cleaned successfully
+2026-03-25 22:17:03,797 - INFO - Saving cleaned data
+2026-03-25 22:17:04,462 - INFO - Cleaned data saved successfully
+2026-03-25 22:17:36,177 - INFO - Loading cleaned data for analysis
+2026-03-25 22:17:36,317 - INFO - Running descriptive statistics
+2026-03-25 22:17:36,346 - INFO - Descriptive statistics completed
+2026-03-25 22:17:36,346 - INFO - Running correlation analysis
+2026-03-25 22:17:36,364 - INFO - Correlation analysis completed
+2026-03-25 22:17:36,364 - INFO - Running hypothesis testing
+2026-03-25 22:17:36,388 - INFO - Hypothesis test completed. P-value: 0.0000
+2026-03-25 22:17:36,388 - INFO - Calculating skewness and kurtosis
+2026-03-25 22:17:36,389 - INFO - Skewness and kurtosis calculated
+2026-03-25 22:17:36,390 - INFO - Saving summary statistics
+2026-03-25 22:17:36,405 - INFO - Summary statistics saved successfully
+2026-03-25 22:17:36,405 - INFO - Loading cleaned data for visualization
+2026-03-25 22:17:36,546 - INFO - Plotting readmission rate by age group
+2026-03-25 22:17:36,744 - INFO - Readmission by age plot saved
+2026-03-25 22:17:36,744 - INFO - Plotting correlation heatmap
+2026-03-25 22:17:36,856 - INFO - Correlation heatmap saved
+2026-03-25 22:17:36,856 - INFO - Plotting medication distribution
+2026-03-25 22:17:36,943 - INFO - Medication distribution plot saved
+2026-03-25 22:17:36,944 - INFO - Plotting time in hospital boxplot
+2026-03-25 22:17:36,978 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-25 22:17:37,001 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-25 22:17:37,043 - INFO - Time in hospital plot saved
+2026-03-25 22:17:37,043 - INFO - Creating interactive Plotly dashboard
+2026-03-25 22:17:37,152 - INFO - Interactive dashboard saved
+2026-03-25 22:17:37,291 - INFO - Data loaded for modeling
+2026-03-25 22:17:37,482 - INFO - Text columns encoded
+2026-03-25 22:17:37,483 - INFO - Features and target separated
+2026-03-25 22:17:37,501 - INFO - Features scaled
+2026-03-25 22:17:37,528 - INFO - Data split: 81412 train, 20354 test
+2026-03-25 22:17:37,569 - INFO - Model training completed
+2026-03-25 22:17:37,628 - INFO - Model accuracy: 0.6689
+2026-03-25 22:17:37,628 - INFO - Model saved successfully
+2026-03-25 22:17:37,765 - INFO - Results loaded for report generation
+2026-03-25 22:17:37,783 - INFO - Excel report generated successfully
+2026-03-25 22:17:37,900 - INFO - PDF report generated successfully
+2026-03-25 22:19:22,095 - INFO - Model and scaler loaded for prediction
+2026-03-25 22:19:55,914 - INFO - Model and scaler loaded for prediction
+2026-03-25 22:21:09,024 - INFO - Patient details collected from terminal
+2026-03-25 22:21:09,194 - INFO - Patient input prepared for prediction
+2026-03-25 22:21:09,200 - INFO - Prediction made: 🔴 HIGH RISK, Score: 99.3%

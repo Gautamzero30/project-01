@@ -65,7 +65,7 @@ def clean_target_column(df):
         lambda x: 1 if x == '<30' else 0
     )
     count = df['readmitted'].value_counts()
-    print(f"✅ Target Column Cleaned:")
+    print(f" Target Column Cleaned:")
     print(f"   Not Readmitted (0): {count[0]}")
     print(f"   Readmitted <30days (1): {count[1]}")
     logging.info("Target column cleaned successfully")
@@ -88,7 +88,7 @@ def save_cleaned_data(df):
 
     logging.info("Cleaned data saved successfully")
     df.to_excel('my_analysis/cleaned_data.xlsx', index=False)
-    print("✅ Cleaned data exported to my_analysis/cleaned_data.xlsx")
+    print(" Cleaned data exported to my_analysis/cleaned_data.xlsx")
 
 if __name__ == "__main__":
     df = load_raw_data()

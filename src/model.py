@@ -42,7 +42,7 @@ def encode_data(df):
     logging.info("Text columns encoded")
     return df
 
-# ─── Step 3: Separate Features and Target ───────────────────
+
 def separate_features_target(df):
     print("\nStep 3: Separating features and target...")
     
@@ -57,7 +57,6 @@ def separate_features_target(df):
     logging.info("Features and target separated")
     return X, y
 
-# ─── Step 4: Scale Numbers ───────────────────────────────────
 def scale_features(X):
     print("\nStep 4: Scaling all numbers to same range...")
     
@@ -72,7 +71,6 @@ def scale_features(X):
     logging.info("Features scaled")
     return X_scaled
 
-# ─── Step 5: Split Into Train and Test ──────────────────────
 def split_data(X, y):
     print("\nStep 5: Splitting data into train and test...")
     
@@ -88,7 +86,7 @@ def split_data(X, y):
     logging.info(f"Data split: {X_train.shape[0]} train, {X_test.shape[0]} test")
     return X_train, X_test, y_train, y_test
 
-# ─── Step 6: Train Model ─────────────────────────────────────
+
 def train_model(X_train, y_train):
     print("\nStep 6: Training Logistic Regression model...")
     print("   Please wait...")
@@ -104,21 +102,21 @@ def train_model(X_train, y_train):
     logging.info("Model training completed")
     return model
 
-# ─── Step 7: Test Model ──────────────────────────────────────
+
 def evaluate_model(model, X_test, y_test):
     print("\nStep 7: Testing model on unseen patients...")
     
-    # Make predictions
+   
     predictions = model.predict(X_test)
     
-    # Check accuracy
+
     accuracy = accuracy_score(y_test, predictions)
     print(f"\n   Accuracy: {accuracy * 100:.2f}%")
     print("\n   Detailed Report:")
     print(classification_report(y_test, predictions,
           target_names=['Not Readmitted', 'Readmitted']))
     
-    # Save confusion matrix
+    
     cm = confusion_matrix(y_test, predictions)
     plt.figure(figsize=(8, 6))
     sns.heatmap(

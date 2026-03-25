@@ -114,7 +114,7 @@ def prepare_input(patient_details, scaler):
     logging.info("Patient input prepared for prediction")
     return input_scaled
 
-# ─── Step 4: Making Prediction ─────────────────────────────────
+
 def make_prediction(model, input_scaled, patient_details):
     prediction = model.predict(input_scaled)[0]
     probability = model.predict_proba(input_scaled)[0][1] * 100
