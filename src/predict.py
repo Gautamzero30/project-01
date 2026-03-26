@@ -23,7 +23,7 @@ def load_model_and_scaler():
 
 def get_patient_details():
     print("=" * 50)
-    print("🏥 PATIENT RISK ASSESSMENT FORM")
+    print(" PATIENT RISK ASSESSMENT FORM")
     print("=" * 50)
     print("Please enter patient details below:")
     print("-" * 50)
@@ -49,7 +49,7 @@ def get_patient_details():
     ))
 
     num_lab_procedures = int(input(
-        "\n📋 How many lab procedures were done? (1-132): "
+        "\n How many lab procedures were done? (1-132): "
     ))
 
     number_inpatient = int(input(
@@ -121,7 +121,7 @@ def make_prediction(model, input_scaled, patient_details):
 
     print(" PATIENT RISK ASSESSMENT RESULT")
     
-
+    print(f" the prediction is {prediction} ")
     if probability >= 85:
         risk_level = "🔴 HIGH RISK"
         recommendation = "you have to visit to your nearby doctor immediately within 7 days, you are at the high risk"

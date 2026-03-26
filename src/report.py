@@ -295,6 +295,9 @@ def generate_pdf_report(df):
             'Time in Hospital vs Readmission'),
     ]
 
+    
+        
+
     for chart_path, chart_title in charts:
         if os.path.exists(chart_path):
             content.append(Paragraph(chart_title, styles['Heading2']))
@@ -305,7 +308,7 @@ def generate_pdf_report(df):
 
 
     doc.build(content)
-    print(f"   ✅ PDF report saved to {pdf_path}")
+    print(f"    PDF report saved to {pdf_path}")
     logging.info("PDF report generated successfully")
 
 

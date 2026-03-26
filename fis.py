@@ -404,7 +404,7 @@ if __name__ == "__main__":
     plot_time_in_hospital(df)
     plot_interactive_dashboard(df)
 
-   
+    # New plots
     plot_readmission_pie(df)
     plot_gender_donut(df)
     plot_scatter_age_hospital(df)
@@ -414,5 +414,5 @@ if __name__ == "__main__":
     plot_pairplot(df)
     plot_inpatient_readmission(df)
 
-    print("\n All Visualizations Complete!")
+    print("\n🎉 All Visualizations Complete!")
     print("   Check your reports/ folder!")

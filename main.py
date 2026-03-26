@@ -22,7 +22,15 @@ from src.visualization import (
     plot_correlation_heatmap,
     plot_medication_distribution,
     plot_time_in_hospital,
-    plot_interactive_dashboard
+    plot_interactive_dashboard,
+    plot_readmission_pie,
+    plot_gender_donut,
+    plot_scatter_age_hospital,
+    plot_violin_medications,
+    plot_line_diagnoses_medications,
+    plot_area_lab_procedures,
+    plot_pairplot,
+    plot_inpatient_readmission
 )
 from src.model import (
     load_data as load_data_model,
@@ -40,27 +48,26 @@ from src.report import (
     generate_pdf_report
 )
 
-# ─── Setup Logging ───────────────────────────────────────────
+
 logging.basicConfig(
     filename='logs/pipeline.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-# ─── Main Pipeline ───────────────────────────────────────────
 def run_pipeline():
     print("=" * 50)
-    print("🏥 PATIENT READMISSION RISK PIPELINE")
+    print(" PATIENT READMISSION RISK PIPELINE")
     print("=" * 50)
 
-    # ── Phase 1: Ingestion ────────────────────────────────
-    print("\n📥 PHASE 1: DATA INGESTION")
+ 
+   
     print("-" * 30)
     df_raw = load_data('data/raw/diabetic_data.csv')
     show_basic_info(df_raw)
     save_to_database(df_raw)
 
-    # ── Phase 2: Cleaning ─────────────────────────────────
+
     print("\n🧹 PHASE 2: DATA CLEANING")
     print("-" * 30)
     df = load_raw_data()
@@ -70,8 +77,8 @@ def run_pipeline():
     df = clean_target_column(df)
     save_cleaned_data(df)
 
-    # ── Phase 3: Analysis ─────────────────────────────────
-    print("\n📊 PHASE 3: STATISTICAL ANALYSIS")
+   
+    print("\n PHASE 3: STATISTICAL ANALYSIS")
     print("-" * 30)
     df_analysis = load_cleaned_data()
     descriptive_statistics(df_analysis)
@@ -80,8 +87,8 @@ def run_pipeline():
     skewness_kurtosis(df_analysis)
     save_summary_statistics(df_analysis)
 
-    # ── Phase 4: Visualization ────────────────────────────
-    print("\n📈 PHASE 4: VISUALIZATION")
+
+    print("\n PHASE 4: VISUALIZATION")
     print("-" * 30)
     df_viz = load_data_viz()
     plot_readmission_by_age(df_viz)
@@ -89,9 +96,17 @@ def run_pipeline():
     plot_medication_distribution(df_viz)
     plot_time_in_hospital(df_viz)
     plot_interactive_dashboard(df_viz)
+    plot_readmission_pie(df_viz)
+    plot_gender_donut(df_viz)
+    plot_scatter_age_hospital(df_viz)
+    plot_violin_medications(df_viz)
+    plot_line_diagnoses_medications(df_viz)
+    plot_area_lab_procedures(df_viz)
+    plot_pairplot(df_viz)
+    plot_inpatient_readmission(df_viz)
 
-    # ── Phase 5: Model ────────────────────────────────────
-    print("\n🤖 PHASE 5: MACHINE LEARNING MODEL")
+   
+    print("\n PHASE 5: MACHINE LEARNING MODEL")
     print("-" * 30)
     df_model = load_data_model()
     df_model = encode_data(df_model)
@@ -102,24 +117,24 @@ def run_pipeline():
     evaluate_model(model, X_test, y_test)
     save_model(model)
 
-    # ── Phase 6: Report ───────────────────────────────────
-    print("\n📄 PHASE 6: REPORT GENERATION")
+    
+    print("\n PHASE 6: REPORT GENERATION")
     print("-" * 30)
     df_report, summary, correlations = load_results()
     generate_excel_report(df_report, summary, correlations)
     generate_pdf_report(df_report)
 
-    # ── Done ──────────────────────────────────────────────
+   
     print("\n" + "=" * 50)
-    print("🎉 PIPELINE COMPLETED SUCCESSFULLY!")
+    print(" PIPELINE COMPLETED SUCCESSFULLY!")
     print("=" * 50)
-    print("\n📁 Check your reports/ folder for:")
+    print("\n Check your reports/ folder for:")
     print("   • dashboard.html")
     print("   • patient_analysis_report.xlsx")
     print("   • patient_analysis_report.pdf")
     print("   • All chart images")
-    print("\n📋 Check logs/pipeline.log for full history")
+    print("\n Check logs/pipeline.log for full history")
 
-# ─── Entry Point ─────────────────────────────────────────────
+
 if __name__ == "__main__":
     run_pipeline()

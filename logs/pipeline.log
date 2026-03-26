@@ -433,3 +433,76 @@
 2026-03-25 22:21:09,024 - INFO - Patient details collected from terminal
 2026-03-25 22:21:09,194 - INFO - Patient input prepared for prediction
 2026-03-25 22:21:09,200 - INFO - Prediction made: 🔴 HIGH RISK, Score: 99.3%
+2026-03-25 23:02:48,595 - INFO - Model and scaler loaded for prediction
+2026-03-25 23:03:19,703 - INFO - Patient details collected from terminal
+2026-03-25 23:03:19,877 - INFO - Patient input prepared for prediction
+2026-03-25 23:03:19,882 - INFO - Prediction made: 🔴 HIGH RISK, Score: 99.7%
+2026-03-25 23:11:58,823 - INFO - Loading cleaned data for visualization
+2026-03-25 23:11:58,962 - INFO - Plotting readmission rate by age group
+2026-03-25 23:11:59,154 - INFO - Readmission by age plot saved
+2026-03-25 23:11:59,154 - INFO - Plotting correlation heatmap
+2026-03-25 23:11:59,279 - INFO - Correlation heatmap saved
+2026-03-25 23:11:59,279 - INFO - Plotting medication distribution
+2026-03-25 23:11:59,365 - INFO - Medication distribution plot saved
+2026-03-25 23:11:59,365 - INFO - Plotting time in hospital boxplot
+2026-03-25 23:11:59,399 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-25 23:11:59,422 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-25 23:11:59,463 - INFO - Time in hospital plot saved
+2026-03-25 23:11:59,463 - INFO - Creating interactive Plotly dashboard
+2026-03-25 23:11:59,564 - INFO - Interactive dashboard saved
+2026-03-25 23:11:59,564 - INFO - Plotting readmission pie chart
+2026-03-25 23:11:59,606 - INFO - Readmission pie chart saved
+2026-03-25 23:11:59,607 - INFO - Plotting gender donut chart
+2026-03-25 23:11:59,639 - INFO - Gender donut chart saved
+2026-03-25 23:11:59,639 - INFO - Plotting scatter plot
+2026-03-25 23:12:00,188 - INFO - Scatter plot saved
+2026-03-25 23:12:00,188 - INFO - Plotting violin plot
+2026-03-25 23:12:00,223 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-25 23:12:00,245 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-25 23:12:00,319 - INFO - Violin plot saved
+2026-03-25 23:12:00,319 - INFO - Plotting line chart
+2026-03-25 23:12:00,366 - INFO - Line chart saved
+2026-03-25 23:12:00,366 - INFO - Plotting area chart
+2026-03-25 23:12:00,417 - INFO - Area chart saved
+2026-03-25 23:12:00,417 - INFO - Plotting pair plot
+2026-03-25 23:12:31,762 - INFO - Pair plot saved
+2026-03-25 23:12:31,762 - INFO - Plotting inpatient visits bar chart
+2026-03-25 23:12:31,782 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-25 23:12:31,784 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-25 23:12:31,859 - INFO - Inpatient visits chart saved
+2026-03-26 09:00:15,786 - INFO - Results loaded for report generation
+2026-03-26 09:00:15,869 - INFO - Excel report generated successfully
+2026-03-26 09:00:16,305 - INFO - PDF report generated successfully
+2026-03-26 09:05:25,532 - INFO - Loading cleaned data for visualization
+2026-03-26 09:05:25,681 - INFO - Plotting readmission rate by age group
+2026-03-26 09:05:25,934 - INFO - Readmission by age plot saved
+2026-03-26 09:05:25,934 - INFO - Plotting correlation heatmap
+2026-03-26 09:05:26,068 - INFO - Correlation heatmap saved
+2026-03-26 09:05:26,068 - INFO - Plotting medication distribution
+2026-03-26 09:05:26,162 - INFO - Medication distribution plot saved
+2026-03-26 09:05:26,162 - INFO - Plotting time in hospital boxplot
+2026-03-26 09:05:26,201 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-26 09:05:26,220 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-26 09:05:26,263 - INFO - Time in hospital plot saved
+2026-03-26 09:05:26,263 - INFO - Creating interactive Plotly dashboard
+2026-03-26 09:05:26,370 - INFO - Interactive dashboard saved
+2026-03-26 09:05:26,370 - INFO - Plotting readmission pie chart
+2026-03-26 09:05:26,405 - INFO - Readmission pie chart saved
+2026-03-26 09:05:26,405 - INFO - Plotting gender donut chart
+2026-03-26 09:05:26,440 - INFO - Gender donut chart saved
+2026-03-26 09:05:26,440 - INFO - Plotting scatter plot
+2026-03-26 09:05:27,004 - INFO - Scatter plot saved
+2026-03-26 09:05:27,004 - INFO - Plotting violin plot
+2026-03-26 09:05:27,044 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-26 09:05:27,063 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-26 09:05:27,136 - INFO - Violin plot saved
+2026-03-26 09:05:27,136 - INFO - Plotting line chart
+2026-03-26 09:05:27,184 - INFO - Line chart saved
+2026-03-26 09:05:27,184 - INFO - Plotting area chart
+2026-03-26 09:05:27,238 - INFO - Area chart saved
+2026-03-26 09:05:27,238 - INFO - Plotting pair plot
+2026-03-26 09:05:58,655 - INFO - Pair plot saved
+2026-03-26 09:05:58,656 - INFO - Plotting inpatient visits bar chart
+2026-03-26 09:05:58,677 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-26 09:05:58,679 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-26 09:05:58,763 - INFO - Inpatient visits chart saved

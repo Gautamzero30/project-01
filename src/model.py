@@ -103,7 +103,7 @@ def train_model(X_train, y_train):
     return model
 
 
-def evaluate_model(model, X_test, y_test):
+def evaluate_model(model, X_test, y_test): 
     print("\nStep 7: Testing model on unseen patients...")
     
    
@@ -156,4 +156,4 @@ if __name__ == "__main__":
     model = train_model(X_train, y_train)
     evaluate_model(model, X_test, y_test)
     save_model(model)
-    print("\n🎉 Model Pipeline Complete!")
+    print("\n  Model Pipeline Complete")
